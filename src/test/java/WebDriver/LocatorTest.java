@@ -92,9 +92,5 @@ public class LocatorTest {
 
         // driver.findElement(By.cssSelector("button#loginbutton")).click();
 
-
-
-
-
     }
 }
