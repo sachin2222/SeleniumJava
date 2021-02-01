@@ -10,6 +10,9 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+import java.util.List;
+
 public class FlightBooking {
 
     WebDriver driver;
@@ -62,22 +65,56 @@ public class FlightBooking {
 
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void dynamicDropDown2() {
 
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         driver.findElement(By.xpath("//div[contains(@id,'divpaxinfo')]")).click();
-        driver.findElement(By.xpath("//*[@id=\"hrefIncAdt\"]")).click();
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        //3 Times click on "+"
 
+        int i = 1;
+        while (i <= 3) {
+            driver.findElement(By.xpath("//span[contains(@id,'hrefIncAdt')]")).click();
+            i++;
+
+        }
+        //Click on "-"
+        driver.findElement(By.xpath("//span[contains(@id,'hrefDecAdt')]")).click();
+        //Click on Done
+        driver.findElement(By.xpath("//input[contains(@id,'btnclosepaxoption')]")).click();
 
     }
 
 
+    @Test
+    public void autoSuggestiveDropdown() {
+
+        driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+
+        WebElement country = driver.findElement(By.xpath("//input[contains(@id,'autosuggest')]"));
+        country.sendKeys("ind");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        List<WebElement> drop_list = driver.findElements(By.className("ui-menu-item"));
+        for (WebElement ele : drop_list) {
+
+            if (ele.getText().equalsIgnoreCase("India")) {
+
+                ele.click();
+                break;
+            }
+
+        }
+
+
+    }
+
     @AfterSuite
     public void closeBrowser() {
 
-        driver.quit();
+        //driver.quit();
 
     }
 
