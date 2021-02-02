@@ -1,52 +1,53 @@
-package WebDriver.Assignment;
+package WebDriver.GreenKart;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
-public class Assignment1 {
+public class ScreenShotGreenKart {
 
     WebDriver driver;
     String chrome_key = "webdriver.chrome.driver";
     String chromeDriverPath = ".\\Drivers\\chromedriver.exe";
-
+    String URL = "https://rahulshettyacademy.com/seleniumPractise/#/";
+    int index = 0;
 
     @BeforeSuite
     public void launchChrome() {
         System.setProperty(chrome_key, chromeDriverPath);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
+        options.addArguments("--disable-notifications");
+
         driver = new ChromeDriver(options);
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        driver.get(URL);
 
     }
 
     @Test
-    public void checkboxTest() {
+    public void getScreenShotAll() throws IOException {
 
-        List<WebElement> all=driver.findElements(By.xpath("//input[@type='checkbox']"));
-        System.out.println(all.size());
+        List<WebElement> images = driver.findElements(By.tagName("img"));
 
-        for(WebElement checkbox:all){
+        for (int i = 0; i < images.size(); i++) {
 
-            checkbox.click();
-            Assert.assertTrue(checkbox.isSelected());
-
-            checkbox.click();
-            Assert.assertFalse(checkbox.isSelected());
-
+            System.out.println(images.get(i).getAttribute("src"));
 
         }
 
 
     }
+
 
 
 }
