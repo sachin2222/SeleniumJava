@@ -7,12 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.Iterator;
 import java.util.List;
 
 public class ClearTrip {
@@ -138,11 +136,6 @@ public class ClearTrip {
     }
 
 
-    // @AfterSuite
-    void closeBrowser() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
 
 
-    }
 }
