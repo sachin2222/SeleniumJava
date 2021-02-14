@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Assignment {
 
@@ -100,6 +101,26 @@ public class Assignment {
         System.out.println(list);
         List<Integer> sortedList = list.stream().distinct().sorted().collect(Collectors.toList());
         System.out.println(sortedList);
+
+
+    }
+
+    @Test
+    public void reverseString() {
+
+        // String a="sachin is Good";
+        //Stream.of(a).map(s->new StringBuilder(s).reverse().toString()).forEach(s-> System.out.println(s));
+
+       // int a[] = {1, 2, 3, 4, 5,-1,-3,10};
+        //Arrays.stream(a).sorted().forEach(s-> System.out.println(s));
+
+        char ch[]={'a','b','z','a'};
+
+       // new String(ch).chars().mapToObj(i->(char)i).sorted().distinct().forEach(s-> System.out.println(s));
+
+        String s="india";
+        System.out.println(new StringBuilder(s).delete(0,1).toString());
+
 
 
     }
