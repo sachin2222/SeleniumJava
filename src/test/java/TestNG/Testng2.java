@@ -1,19 +1,33 @@
 package TestNG;
 
+import org.junit.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
 
 public class Testng2 {
 
+
+
     @Test
-    public void class2(){
-        System.out.println("class2");
+    public void carLoan(){
+        System.out.println("carLoan");
+
 
 
     }
 
     @Test
-    public void class3(){
-        System.out.println("class3");
+    public void homeLoan(){
+        System.out.println("homeLoan");
+
+
+    }
+
+    @Test
+    public void PersonalLoan(){
+        System.out.println("PersonalLoan");
+        Assert.assertTrue(false);
 
 
     }

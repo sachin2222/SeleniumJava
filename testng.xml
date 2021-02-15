@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+  <!--  <listeners>
+        <listener class-name="TestNG.Listeners"/>
+
+    </listeners>-->
 
     <test verbose="2" preserve-order="true"
           name="test1">
@@ -13,7 +17,7 @@
             </run>
         </groups>
         <classes>
-            <class name="TestNG.TestNGPractice">
+            <class name="TestNG.Testng2">
 
             </class>
         </classes>
