@@ -1,0 +1,4 @@
+2021-02-19 13:44:14 ERROR LoggerTest:16 - Error Message
+2021-02-19 13:44:14 INFO  LoggerTest:17 - Info Message
+2021-02-19 13:44:14 ERROR LoggerTest:18 - Error Message 2
+2021-02-19 13:44:14 INFO  LoggerTest:19 - One more Message
