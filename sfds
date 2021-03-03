@@ -1,0 +1,12 @@
+
+  @ValidUsers
+  Scenario Outline: Validate valid Login Successfull Access
+    Given User navigates to the Air Vistara Login Page.
+    When user enters user email "<Email>"
+    And User enter Password"<Password>"
+    And User Clicks on Login Button
+    Then User should Successfully navigate to Home page.
+
+    Examples:
+      | Email      | Password   |
+      | validuser1 | valid@1234 |

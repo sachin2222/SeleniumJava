@@ -14,14 +14,14 @@
   </appender>
 
 
-  <logger name="Logger.LoggerTest">
+<!--  <logger name="cucumberE2E/Runner.java">
     <level value="DEBUG" />
     <appender-ref ref="file" />
-  </logger>
+  </logger>-->
 
- <!-- <root>
+ <root>
     <level value="DEBUG" />
     <appender-ref ref="file" />
-  </root>-->
+  </root>
 
 </log4j:configuration>
